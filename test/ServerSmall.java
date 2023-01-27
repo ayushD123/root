@@ -12,8 +12,7 @@ System.out.println("Server waiting");
 Socket server = se.accept();
 BufferedReader k = new BufferedReader (new InputStreamReader(server.getInputStream()));
 String filename = k.readLine();
-FileReader f = new FileReader(filename);
-BufferedReader ff = new BufferedReader(f);
+BufferedReader ff = new BufferedReader(new FileReader(filename));
 DataOutputStream sendToClient = new DataOutputStream(server.getOutputStream());
 String string;
 while((string = ff.readLine())!=null)
